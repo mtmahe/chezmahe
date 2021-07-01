@@ -1,0 +1,5 @@
+python-coinmarketcap==0.2
+json
+requests
+datetime
+urllib.parse

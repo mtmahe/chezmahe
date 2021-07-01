@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	Stocks
+{% endblock %}
+
+{% block main %}
+	<h1>Latest Stocks</h1>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Symbol</th>
+			<th>Price</th>
+			<th>Date</th>
+		</tr>
+		<br>
+		{% for row in theStocks[::-1] %}
+		<tr>
+			<td>{{ row.name }}</td>
+			<td>{{ row.symbol }}</td>
+			<td>{{ "$%.2f"|format(row.price) }}</td>
+			<td>{{ row.date }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <p style='text-align:center'>Choose cryptocurrency or stock, then enter a ticker. Eg. "Stocks" and "AAPL"</p>
+    <form action="/quote" method="post">
+        <div class="form-group">
+          <label for="type">Choose type:</label>
+          <select id="type" name="type">
+            <option value="cmc">Crypto</option>
+            <option value="iex">Stock</option>
+          </select>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Ticker symbol" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Quote</button>
+    </form>
+{% endblock %}

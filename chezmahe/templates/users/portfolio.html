@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <table>
+        <tr>
+            <th>Ticker</th>
+            <th>Name</th>
+            <th>Shares</th>
+            <th>price</th>
+            <th>TOTAL</th>
+        </tr>
+        {% for i in range(length) %}
+        <tr>
+            <td>{{ items[i].ticker }}</td>
+            <td>{{ items[i].name }}</td>
+            <td>{{ items[i].shares }}</td>
+            <td>${{ "%.2f"|format(items[i].price) }}</td>
+            <td>${{ "%.2f"|format(items[i].total) }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td>CASH</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>${{ "%.2f"|format(cash) }}</td>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>${{ "%.2f"|format(totalCash) }}</th>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>TOTAL</th>
+        </tr>
+        {% for i in range(length_ai) %}
+        <tr>
+            <td><li style="list-style-type: none;"><a style="color: aquamarine;" class="nav-link" href="/mark1">{{ highs[i]["username"] }}</a></li></td>
+            <td>AI Bot</td>
+            <td>{{ "$%.2f"|format(highs[i]["total"]) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

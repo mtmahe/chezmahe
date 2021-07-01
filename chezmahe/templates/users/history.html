@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Ticker</th>
+            <th>Units</th>
+            <th>Price</th>
+            <th>Date</th>
+        </tr>
+        {% for i in range(length) %}
+        <tr>
+            <td>{{ trans[i].buysell }}</td>
+            <td>{{ trans[i].ticker }}</td>
+            <td>{{ trans[i].units }}</td>
+            <td>{{ "$%.2f"|format(trans[i].price) }}</td>
+            <td>{{ trans[i].date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

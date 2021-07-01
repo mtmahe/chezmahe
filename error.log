@@ -1,0 +1,8 @@
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+127.0.0.1 - - [26/Apr/2021 18:52:23] "[37mGET / HTTP/1.1[0m" 200 -
+127.0.0.1 - - [26/Apr/2021 18:52:24] "[37mGET /static/styles.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [26/Apr/2021 18:52:25] "[37mGET /login HTTP/1.1[0m" 200 -
+127.0.0.1 - - [26/Apr/2021 18:52:26] "[37mGET /static/styles.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [26/Apr/2021 18:52:27] "[32mPOST /login HTTP/1.1[0m" 302 -
+127.0.0.1 - - [26/Apr/2021 18:52:28] "[37mGET / HTTP/1.1[0m" 200 -
+127.0.0.1 - - [26/Apr/2021 18:52:28] "[37mGET /static/styles.css HTTP/1.1[0m" 200 -

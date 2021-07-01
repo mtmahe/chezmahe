@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Mark1: Predicted vs Actual
+{% endblock %}
+
+{% block main %}
+    <p>This AI was trained with one year of hourly cryptocurrency data that was normalized then
+    fed into a TensorFlow Keras linear regression model. Although originally I used
+    a TF Lite model on a Raspberry Pi I found the accuracy dropped too much compared
+    to the full model running on an RTX 3080. The prediction, three days ahead, is
+    then sent to my cloud based linux server which uses the prediction to decide
+    if it should buy,sell, or hold bitcoin. If you've logged in you'll be able to
+    do the same.</p>
+    <p>The server is also updating a database of 15 stocks and once it has enough
+      data from those, I'll set up Mark2.</p>
+    <p></p>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Predicted</th>
+            <th>Actual</th>
+        </tr>
+        {% for i in range(length) %}
+        <tr>
+            <td>{{ predictions[i]["date"] }}</td>
+            <td>{{ predictions[i]["prediction"] }}</td>
+            <td>{{ predictions[i]["actual"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,91 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+/* colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+
+    background-color: DarkSlateGray;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+footer {
+  list-style-type: none;
+  text-color: aquamarine;
+}
+
+table, th, td {
+    border-top: 1px solid lightgray;
+    padding: 15px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h4 {
+  text-align: left;
+}
+
+p {
+  text-align: left;
+}
+
+/* unvisited link */
+a:link {
+  color: aquamarine;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: aquamarine;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: green;
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: aquamarine;
+  text-decoration: none;
+}
+
+/* List */
+link, li {
+  list-style-type: none;
+}
+
+/* tr:nth-child(even) {background-color: #f2f2f2;} */
+tr:nth-child(even) {background-color: DarkSlateGray;}

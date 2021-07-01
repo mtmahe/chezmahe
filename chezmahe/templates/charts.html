@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	Charts
+{% endblock %}
+
+{% block main %}
+	<h1>Cryptocurrency Charts</h1>
+	<h3>{{ dRange }}</h3>
+
+	<canvas id="line-chart" aria-label="Cryptocurrency line graph" role="img">
+    <p>Usually there would be a lovely chart here. It's too bad your browser doesn't support the canvas element.</p>
+  </canvas>
+  <script src="{{url_for('static', filename='chartjs.js')}}"></script>
+  <script>
+
+		coin = myDict({{ coin|tojson }});
+		value = myValue({{ thevalue|tojson }});
+		dates = myValue({{ dates|tojson }});
+
+
+		Chart.defaults.global.defaultFontColor = 'white';
+    new Chart(document.getElementById("line-chart"), {
+      type: 'line',
+      data: {
+        labels: dates,
+        datasets: [{
+            data: value,
+            label: coin,
+            borderColor: "#ffff00",
+            fill: false
+          }
+        ]
+      },
+      options: {
+		scales: {
+			xAxes: [{
+				ticks: {
+					autoSkip: true,
+					maxTicksLimit: 7
+				}
+			}]
+		},
+        title: {
+          display: true,
+          text: 'Coin value in USD'
+        }
+      }
+    });
+  </script>
+	<form action="/charts" method="post">
+		<div class="form-group">
+			<label for="newcoin">Choose a coin:</label>
+			<select id="newcoin" name="newcoin">
+				{% for i in range(available|length) %}
+				<option value="{{ available[i] }}">{{ available[i] }}</option>
+				{% endfor %}
+			</select>
+			<label for="daterange">Date Range:</label>
+			<select id="daterange" name="daterange">
+				{% for i in range(dateRange|length) %}
+				<option value="{{ dateRange[i] }}">{{ dateRange[i] }}</option>
+				{% endfor %}
+			</select>
+			<button class="btn btn-primary" type="submit">Chart it</button>
+		</div>
+	</form>
+	<p style='text-align:left'>This site updates a database every hour with the top ten cryptocurrencies by market capapitalization. If a coin is in the database you can choose it above and chart it. You may also use the links at the top to view the current top ten or database statistics.</p>
+{% endblock %}

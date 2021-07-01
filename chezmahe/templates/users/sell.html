@@ -1,0 +1,26 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <p style='text-align:center'>Choose cryptocurrency or stock, then enter a ticker. Eg. "Stocks" and "AAPL"</p>
+    <form action="/sell" method="post">
+        <div class="form-group">
+          <label for="type">Choose type:</label>
+          <select id="type" name="type">
+            <option value="cmc">Crypto</option>
+            <option value="iex">Stock</option>
+          </select>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Ticker Symbol" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="shares" type="number" step="1" value="1">
+        </div>
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	Top Ten
+{% endblock %}
+
+{% block main %}
+	<h1>Top ten coins:</h1>
+	<h5>{{ date }} (GMT-3)</h3>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Symbol</th>
+			<th>Price</th>
+			<th>24hr Volume</th>
+		</tr>
+		<br>
+		{% for row in coins[::-1] %}
+		<tr>
+			<td>{{ row.name }}</td>
+			<td>{{ row.symbol }}</td>
+			<td>{{ "$%.2f"|format(row.price) }}</td>
+			<td>{{ row.volume_24h }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+	<footer class="small text-center text-muted">
+        Data provided for free by <a href="https://coinmarketcap.com/">Coin Market Cap</a>. View <a href="https://coinmarketcap.com/terms/#copyright">Coin Market Cap’s Terms of Use</a>.
+    </footer>
+{% endblock %}

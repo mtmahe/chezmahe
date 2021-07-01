@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    <table>
+  		<tr>
+  			<th>Name</th>
+  			<th>Symbol</th>
+  			<th>Price</th>
+  			<th>24hr Change</th>
+  		</tr>
+  		<br>
+  		<tr>
+  			<td>{{ companyName }}</td>
+  			<td>{{ theSymbol }}</td>
+  			<td>{{ "$%.2f"|format(price) }}</td>
+  			<td>{{ "%.2f"|format(theChange) }}%</td>
+  		</tr>
+  	</table>
+
+{% endblock %}

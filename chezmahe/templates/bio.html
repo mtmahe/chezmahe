@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	Bio
+{% endblock %}
+
+{% block main %}
+	<h1>Database Statistics</h1>
+	<ul>
+      <li>API calls made: {{ calls }} </li>
+			<li>Database rows: {{ rows }}</li>
+			<li>Coins: {{ coins }} </li>
+			<li>Stocks: {{ stocks }}</li>
+			<li>First entry: {{ start_date }}</li>
+  </ul>
+	<br>
+	<h4>Marc Mahe - Bio</h4>
+	<p>I'm a programmer living in Halifax, NS and this site is a personal project of mine. I also developed the Lost Orphanarium interactive novel <a style="color: aquamarine;" href="https://play.google.com/store/apps/details?id=icarus.lostorphanareum.actone&hl=en_CA&gl=US">available on android play</a>.</p>
+	<footer class="small text-center text-muted">
+        Crypto data provided for free by <a style="color: aquamarine;" href="https://coinmarketcap.com/">Coin Market Cap</a>. View <a style="color: aquamarine;" href="https://coinmarketcap.com/terms/#copyright">Coin Market Cap’s Terms of Use</a>.
+				Stock data provided for free by <a style="color: aquamarine;" href="https://iexcloud.io">iex cloud</a>. View <a style="color: aquamarine;" href="https://iextrading.com/api-terms/">iex cloud api Terms of Use</a>.
+    </footer>
+{% endblock %}
