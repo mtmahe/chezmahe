@@ -39,3 +39,22 @@ cm_key: should match your config file. You get to pick it.
 
 To generate a random key in unix
 tr -dc A-Za-z0-9 </dev/urandom | head -c 13 ; echo ''
+
+
+For the AI:  
+urlGet = 'http://[your_site_name].com/current'  
+urlPost = 'http://[your_site_name].com/prediction'  
+
+You'll need to use:  
+headers = {  
+		'Accepts': 'application/json',  
+		'username': username,  
+		'password': password  
+	}  
+as well as 'prediction' for the urlPost.  
+
+If you wish to change how the site uses the prediction look at the prediction route. Eventually that 
+will be moved into the 'models' folder. By default it's very pessimistig but my AI hasn't seen a market 
+crash yet...  
+
+Thanks for reading and I hope you enjoy!
