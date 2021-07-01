@@ -1,0 +1,23 @@
+
+# ignore pycache
+chezmahe/__pycache__/
+*.pyc
+
+# ignore db
+chezmahe/crypto.db
+*.db
+
+# ignore venv
+venv/
+
+#ignore cron file
+cronmsg.txt
+
+# ignore backup
+*.orig
+
+# ignore log
+*.log
+
+# ignore session data
+flask_session/
