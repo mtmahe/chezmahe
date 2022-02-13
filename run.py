@@ -1,4 +1,4 @@
-from chezmahe import app
+from cmcapps import app
 import logging
 
 # app = create_app()
